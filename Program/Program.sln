@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Program", "Program.vcxproj", "{7B617914-74DA-4408-B23C-B8CD6FC78FCD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class01th Time Complexity & Space Complexity (시간, 공간 복잡도)", "..\Class01th Time Complexity & Space Complexity (시간, 공간 복잡도)\Class01th Time Complexity & Space Complexity (시간, 공간 복잡도).vcxproj", "{FFDF4393-09E8-44F3-8042-94C407180444}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class02th Brute Force (브루토 포스)", "..\Class02th Brute Force (브루토 포스)\Class02th Brute Force (브루토 포스).vcxproj", "{1769BDE5-AD57-4FC7-94D9-666FF5107458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Debug|x64.ActiveCfg = Debug|x64
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Debug|x64.Build.0 = Debug|x64
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Debug|x86.Build.0 = Debug|Win32
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Release|x64.ActiveCfg = Release|x64
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Release|x64.Build.0 = Release|x64
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Release|x86.ActiveCfg = Release|Win32
+		{7B617914-74DA-4408-B23C-B8CD6FC78FCD}.Release|x86.Build.0 = Release|Win32
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Debug|x64.ActiveCfg = Debug|x64
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Debug|x64.Build.0 = Debug|x64
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Debug|x86.ActiveCfg = Debug|Win32
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Debug|x86.Build.0 = Debug|Win32
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Release|x64.ActiveCfg = Release|x64
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Release|x64.Build.0 = Release|x64
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Release|x86.ActiveCfg = Release|Win32
+		{FFDF4393-09E8-44F3-8042-94C407180444}.Release|x86.Build.0 = Release|Win32
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Debug|x64.ActiveCfg = Debug|x64
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Debug|x64.Build.0 = Debug|x64
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Debug|x86.ActiveCfg = Debug|Win32
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Debug|x86.Build.0 = Debug|Win32
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x64.ActiveCfg = Release|x64
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x64.Build.0 = Release|x64
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x86.ActiveCfg = Release|Win32
+		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A313E9B-3A4C-4F98-982F-A92BFF773910}
+	EndGlobalSection
+EndGlobal

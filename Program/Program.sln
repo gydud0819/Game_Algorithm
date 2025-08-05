@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Program", "Program.vcxproj", "{7B617914-74DA-4408-B23C-B8CD6FC78FCD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class01th Time Complexity & Space Complexity (시간, 공간 복잡도)", "..\Class01th Time Complexity & Space Complexity (시간, 공간 복잡도)\Class01th Time Complexity & Space Complexity (시간, 공간 복잡도).vcxproj", "{FFDF4393-09E8-44F3-8042-94C407180444}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class02th Brute Force (브루토 포스)", "..\Class02th Brute Force (브루토 포스)\Class02th Brute Force (브루토 포스).vcxproj", "{1769BDE5-AD57-4FC7-94D9-666FF5107458}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class03th Bubble Sort (버블 정렬)", "..\Class03th Bubble Sort (버블 정렬)\Class03th Bubble Sort (버블 정렬).vcxproj", "{AE2C6365-31DD-4289-B725-11B39560163C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class04th Select Sort (선택 정렬)", "..\Class04th Select Sort (선택 정렬)\Class04th Select Sort (선택 정렬).vcxproj", "{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class05th Insert Sort (선택 정렬)", "..\Class05th Insert Sort (선택 정렬)\Class05th Insert Sort (선택 정렬).vcxproj", "{1DB801DF-0A04-4229-A275-2DBAB24CA12E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,30 @@ Global
 		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x64.Build.0 = Release|x64
 		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x86.ActiveCfg = Release|Win32
 		{1769BDE5-AD57-4FC7-94D9-666FF5107458}.Release|x86.Build.0 = Release|Win32
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Debug|x64.ActiveCfg = Debug|x64
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Debug|x64.Build.0 = Debug|x64
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Debug|x86.ActiveCfg = Debug|Win32
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Debug|x86.Build.0 = Debug|Win32
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Release|x64.ActiveCfg = Release|x64
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Release|x64.Build.0 = Release|x64
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Release|x86.ActiveCfg = Release|Win32
+		{AE2C6365-31DD-4289-B725-11B39560163C}.Release|x86.Build.0 = Release|Win32
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Debug|x64.ActiveCfg = Debug|x64
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Debug|x64.Build.0 = Debug|x64
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Debug|x86.ActiveCfg = Debug|Win32
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Debug|x86.Build.0 = Debug|Win32
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Release|x64.ActiveCfg = Release|x64
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Release|x64.Build.0 = Release|x64
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Release|x86.ActiveCfg = Release|Win32
+		{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}.Release|x86.Build.0 = Release|Win32
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Debug|x64.ActiveCfg = Debug|x64
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Debug|x64.Build.0 = Debug|x64
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Debug|x86.ActiveCfg = Debug|Win32
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Debug|x86.Build.0 = Debug|Win32
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x64.ActiveCfg = Release|x64
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x64.Build.0 = Release|x64
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x86.ActiveCfg = Release|Win32
+		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

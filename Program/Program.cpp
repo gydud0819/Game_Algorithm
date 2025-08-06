@@ -13,26 +13,41 @@ void sieve(int n)
 	// 데이터 값 넣기(?)
 	// 소수가 아닌 값은 0으로 처리하기		2의배수 3의배수 얘네를 0으로? 	
 	// 특정한 숫자의 제곱근이면 4 9 16?
-	int i = 0;
+	
 	bool* data = new bool[n + 1];
 
-	for (i = 1; i <= n; i++)
+	for (int i = 0; i <= n; i++)
 	{
 		// 요기에 값넣는건가
-		data[i] = true;
+		data[i] = true;		// 모든 숫자를 소수라고 하기 
 	}
-	data[0] = data[1] = false;	// 0과 1은 소수가 아닌게 맞는데 
+	data[0] = data[1] = false;	// 0과 1은 소수가 아닌게 맞는데  -> 아닌 거 맞음, 0은 0이고 1은 자연수가 맞긴하지만 이거 설명하려면 삼단논법같은걸로 논리정연하게 풀어야함;;
 
-	// 이게 뭔 소리여 내가 했는데 내가 모르겠네 
-	for (int j = i * i; j < n; j+=i)
+	// 특정 숫자의 제곱근까지 돌리기(i * i <= n)
+	for (int i = 2; i * i <= n; i++)
 	{
-		if (data[j] % 2 == 0)
+		if (data[i])	// i 값이 소수로 남아있다면
 		{
-			return;
+			// i의 제곱부터 i의 배수들은 전부 소수 아님 처리
+			// i 이전에 이미 지워졌던 애들 겹치는 건 건너뛰기 (최적화를 위해서)
+			for (int j = i * i; j <= n; j += i)		
+			{
+				data[j] = false;					// 돌렸을 때 소수가 아닌 거 처리하기 
+			}
 		}
 	}
 
-	delete[] data;
+	// 소수 출력하기
+	for (int i = 2; i <= n; i++)
+	{
+		if (data[i]) 
+		{
+			cout << i << " ";
+		}
+	}
+	cout << endl;
+
+	delete[] data;	// 메모리 해제
 
 }
 #pragma endregion
@@ -82,6 +97,6 @@ int main()
 		}
 	}*/
 	
-
+	sieve(50);
 	return 0;
 }

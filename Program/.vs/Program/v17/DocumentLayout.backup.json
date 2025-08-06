@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|solutionrelative:Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1769BDE5-AD57-4FC7-94D9-666FF5107458}|..\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4).vcxproj|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,47 +21,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Util.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Util.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Util.h",
               "RelativeDocumentMoniker": "Util.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Util.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Util.h",
               "RelativeToolTip": "Util.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-06T06:12:52.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T06:12:52.832Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Source.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
-              "RelativeToolTip": "..\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Administrator\\Desktop\\Game_Algorithm\\Class02th Brute Force (\uBE0C\uB8E8\uD1A0 \uD3EC\uC2A4)\\Source.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-06T05:16:00.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T05:16:00.092Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp",
-              "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAowBwAAAAXAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp*",
+              "RelativeToolTip": "Program.cpp*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-04T04:25:41.259Z",
               "EditorCaption": ""

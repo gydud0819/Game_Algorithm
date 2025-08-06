@@ -13,7 +13,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class03th Bubble Sort (버�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class04th Select Sort (선택 정렬)", "..\Class04th Select Sort (선택 정렬)\Class04th Select Sort (선택 정렬).vcxproj", "{4E1B9329-1AAD-49E0-83BA-C552EC1D9CF8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class05th Insert Sort (선택 정렬)", "..\Class05th Insert Sort (선택 정렬)\Class05th Insert Sort (선택 정렬).vcxproj", "{1DB801DF-0A04-4229-A275-2DBAB24CA12E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class05th Insert Sort (삽입 정렬)", "..\Class05th Insert Sort (선택 정렬)\Class05th Insert Sort (선택 정렬).vcxproj", "{1DB801DF-0A04-4229-A275-2DBAB24CA12E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class06th Euclidean (유클리드 호제법)", "..\Class06th Euclidean (유클리드 호제법)\Class06th Euclidean (유클리드 호제법).vcxproj", "{49F2ADC4-74D8-4038-912E-3EAD130777AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x64.Build.0 = Release|x64
 		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x86.ActiveCfg = Release|Win32
 		{1DB801DF-0A04-4229-A275-2DBAB24CA12E}.Release|x86.Build.0 = Release|Win32
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Debug|x64.ActiveCfg = Debug|x64
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Debug|x64.Build.0 = Debug|x64
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Debug|x86.Build.0 = Debug|Win32
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Release|x64.ActiveCfg = Release|x64
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Release|x64.Build.0 = Release|x64
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Release|x86.ActiveCfg = Release|Win32
+		{49F2ADC4-74D8-4038-912E-3EAD130777AA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

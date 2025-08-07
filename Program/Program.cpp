@@ -1,102 +1,78 @@
 ﻿#include "Util.h"
 
-#pragma region 에라토스테네스의 체 
-/*
-* 2 3 5 7 11 13 17 19 23
-* 2~N(50) 브루트 포스로 해결하기 
-*/
+#pragma region Two Pointer Algorithm
 
-// O(n^1/2)
-void sieve(int n)
+#pragma endregion
+
+#pragma region 이분? 이진? 탐색
+// 탐색 범위를 반으로 나누어 찾는 값을 포함하는 범위를 좁혀나가는 방식으로 동작하는 알고리즘 two pointer랑 다른건가 
+
+// for 써도 되고 재귀로 해도되고? 둘다 별론데
+// pivot을 왜 가우ㅏㄴ데부터하지 
+
+// 6 10 13 22 57
+// 함수를 void로 하면 안됐나.. 
+// 내가 한 풀이 
+void BinarySearch(int list[], int left, int right, int data)
 {
-	// 동적할당해서(?) new 쓰기 아니 근데 써도 그 다음 진행을 내가 할 수 잇..나? 
-	// 데이터 값 넣기(?)
-	// 소수가 아닌 값은 0으로 처리하기		2의배수 3의배수 얘네를 0으로? 	
-	// 특정한 숫자의 제곱근이면 4 9 16?
-	
-	bool* data = new bool[n + 1];
-
-	for (int i = 0; i <= n; i++)
+	if (left == right)
 	{
-		// 요기에 값넣는건가
-		data[i] = true;		// 모든 숫자를 소수라고 하기 
-	}
-	data[0] = data[1] = false;	// 0과 1은 소수가 아닌게 맞는데  -> 아닌 거 맞음, 0은 0이고 1은 자연수가 맞긴하지만 이거 설명하려면 삼단논법같은걸로 논리정연하게 풀어야함;;
-
-	// 특정 숫자의 제곱근까지 돌리기(i * i <= n)
-	for (int i = 2; i * i <= n; i++)
-	{
-		if (data[i])	// i 값이 소수로 남아있다면
-		{
-			// i의 제곱부터 i의 배수들은 전부 소수 아님 처리
-			// i 이전에 이미 지워졌던 애들 겹치는 건 건너뛰기 (최적화를 위해서)
-			for (int j = i * i; j <= n; j += i)		
-			{
-				data[j] = false;					// 돌렸을 때 소수가 아닌 거 처리하기 
-			}
-		}
+		cout << "Not data found" << endl;
+		return;
 	}
 
-	// 소수 출력하기
-	for (int i = 2; i <= n; i++)
+	int mid = (left + right) / 2;
+
+	if (list[mid] == data)
 	{
-		if (data[i]) 
-		{
-			cout << i << " ";
-		}
+		cout << "Found data" << endl;
+		return;
 	}
-	cout << endl;
-
-	delete[] data;	// 메모리 해제
-
+	else if (list[mid] > data)
+	{
+		return BinarySearch(list, left, mid, data);
+	}
+	else
+	{
+		return BinarySearch(list, right, mid, data);
+	}
 }
+
+// 강사님 풀이 
+void Search(int list[], int key, int size)
+{
+	int left = 0;
+	int right = size - 1;
+
+	while (left <= right)
+	{
+		int pivot = (left + right) / 2;
+
+		if (list[pivot] == key)
+		{
+			cout << " found key" << endl;
+			return;
+		}
+		else if (list[pivot] > key)
+		{
+			right = pivot - 1;
+		}
+		else
+		{
+			left = pivot + 1;
+		}
+	}
+
+	cout << "not key found" << endl;
+}
+
 #pragma endregion
 
 
 int main()
 {
-	// 2 3 5 7 11 13 17 19 23
-	// 소수판별기 만들기 1과 자기자신만 나와야한다매...
-	// 무식? 
-	// 그럼 또 for써야하나? 이중..?
-
-	int n = 50;
-
-	//for (int i = 2; i <= n; i++)
-	//{
-	//	// n-1? 이게 잇어야하나? 
-	//	for (j = 2; j < i; j++)
-	//	{
-	//		// 오웅 모르겠당 
-	//		if (i % j == 0) // 이게 아닌가? 
-	//		{
-	//			break;
-	//		}
-	//	}
-
-	//	if (i == j)
-	//	{
-	//		cout << i << " ";
-	//	}
-	//}
-
-	/*for (int i = 2; i <= n; i++)
-	{
-		int count = 0;
-		for (int j = 1; j <= i; j++)
-		{
-			if (i % j == 0)
-			{
-				count++;
-			}
-			
-		}
-		if (count == 2)
-		{
-			cout << i << " ";
-		}
-	}*/
-	
-	sieve(50);
+	int list[] = { 6,10,13,22,57 };
+	int size = sizeof(list) / sizeof(list[0]);
+	BinarySearch(list, 0, size - 1, 11);
 	return 0;
 }

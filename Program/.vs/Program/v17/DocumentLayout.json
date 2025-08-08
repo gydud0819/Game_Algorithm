@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7B617914-74DA-4408-B23C-B8CD6FC78FCD}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class08th Divide and Conquer (\uBD84\uD560 \uC815\uBCF5)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{66CD5CB9-6C4E-4465-8CC1-2C0523DCDE65}|..\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9).vcxproj|C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,29 +17,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class08th Divide and Conquer (\uBD84\uD560 \uC815\uBCF5)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Administrator\\Desktop\\Game_Algorithm\\Class08th Divide and Conquer (\uBD84\uD560 \uC815\uBCF5)\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class08th Divide and Conquer (\uBD84\uD560 \uC815\uBCF5)\\Source.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Administrator\\Desktop\\Game_Algorithm\\Class08th Divide and Conquer (\uBD84\uD560 \uC815\uBCF5)\\Source.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAeAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Source.cpp",
+              "RelativeToolTip": "..\\Class09th Binary Search (\uC774\uBD84 \uD0D0\uC0C9)\\Source.cpp",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-07T05:42:33.321Z"
+              "WhenOpened": "2025-08-08T04:22:25.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\Game_Algorithm\\Program\\Program.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Game_Algorithm\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAAAF8AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-04T04:25:41.259Z",
               "EditorCaption": ""

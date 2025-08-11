@@ -1,46 +1,40 @@
 ﻿#include "Util.h"
 
-#pragma region 계수 정렬
-// 데이터의 값을 비교하지 않고 각 원소에 데이터가 몇 개 있는지 개수를 세고 저장한 다음 정렬하는 알고리즘
+#pragma region Merge Sort (병합 정렬)
+// 하나의 리스트를 2개의 균일한 크기로 분할하고
+// 분할된 부분 리스트를 정렬한 다음, 2개의 정렬된 부분 리스트를
+// 합하여 전체가 정렬된 리스트가 되게 하는 방법이다.
 
-void Counting(int list[], int size)
+// 1. 리스트의 길이가 0 or 1이 되면 이미 정렬된 것으로 간주한다.
+// 2. 그렇지 않은 경우
+// 2-1. 정렬되지 않은 리스트를 반으로 나눈 다음 비슷한 크기의 두 부분 리스트로 나눈다.
+// 2-2. 각 부분 리스트를 재귀적으로 병합 정렬을 이용하여 정렬한다.
+// 2-3. 두 부분 리스트를 다시 하나의 정렬된 리스트로 병합한다.
+
+//  3 5 2 7 4 1 8 6 
+void MergeSort(int list[], int start, int end)
 {
-	int count[6] = {0};		// 이게 아닌가 
-	
-	// 전체적으로 한번 돌려야한다했나..? 그럼 list안에 있는걸 돌려야하나..? ??????????????????????????????
-	for (int i = 0; i < size; i++)
+	// 어케 쪼개요..? 이렇게 쪼개면 되구나 
+	if (start < end)
 	{
-		count[list[i]]++;		// ? 
+		int mid = (start + end) / 2;
+		MergeSort(list, start, mid);
+		MergeSort(list, mid + 1, end);
 	}
 
-	// 이제 정렬해야할거같은데 
-	for (int i = 0; i < 6; i++)		// 이게 아닌가 
-	{
-		// 뭘 더 써야하는거지
-		// for? while????????????????
-		while (count[i] > 0)
-		{
-			// 출력은 어디다 하지 여긴가
-			cout << i << " ";
-			count[i]--;
-			
-		}
-			
-	}
+}
+
+void Merge(int list[], int mid, int end)
+{
+	// 
+	int count = 0;
 }
 #pragma endregion
 
-
-
-
 int main()
 {
-	int list[] = { 1,3,2,2,4,5,1,2 };
-	// sort써도되나? 그럼 벡터써야할거같은데 ㅇㅅㅇ
-	// 1 1 2 2 2 3 4 5
-	// 카운트 변수? 이게 배열이어야하는건가 
-	int size = sizeof(list) / sizeof(list[0]);	
-	Counting(list, size);
-
+	int list[] = { 3,5,2,7,4,1,8,6 };
+	int size = sizeof(list) / sizeof(list[0]);
+	MergeSort(list, 0, size - 1);
 	return 0;
 }

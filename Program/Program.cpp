@@ -26,12 +26,12 @@ int fibonacci(int n)
 	return fibonacci(n - 1) + fibonacci(n - 2);		// <- 점화식				 리턴하겟군
 }
 
-// 동적 계획법으로하는 피보나치 왜 이따구로 풀었지? 
-int fibonacci(int n, int list[])
+// 동적 계획법으로하는 피보나치 왜 이따구로 풀었지?  == 타블레이션
+int fibonacciDP(int n, int list[])
 {
 	list[0] = 0;
 	list[1] = 1;
-	
+
 	for (int i = 2; i <= n; i++)
 	{
 		list[i] = list[i - 1] + list[i - 2];
@@ -40,10 +40,17 @@ int fibonacci(int n, int list[])
 
 }
 
+// 재귀방식으로 한 동적 계획법 == 메모이재이션
 int fibonacci(int n, int list[])
 {
-	if (list[n] <= 1)
-		return list[n] + 1;
+	if (list[n] != -1)
+	{
+		return list[n];
+	}
+
+	list[n] = fibonacci(n - 1) + fibonacci(n - 2);
+
+	return list[n];
 
 
 }
@@ -55,7 +62,9 @@ int main()
 
 	// 내가 출력을 못하나? 
 	int list[10001];
-	cout << fibonacci(100, list);
+	cout << fibonacciDP(50, list);
+	cout << endl;
+	cout << fibonacci(50, list);
 
 	return 0;
 }

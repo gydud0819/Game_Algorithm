@@ -1,70 +1,91 @@
 ﻿#include "Util.h"
 #define SIZE 8
-#pragma region 깊이 우선 탐색 (Depth First Search == DFS)
-// root 노드에서부터 다음 분기로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 방법
-// 깊이 우선 탐색은 스택을 활용한다.
+
+#pragma region 위상 정렬
+// 병합 그래프에 존재하는 각 정점들의 선행 순서를 지키고, 모든 정점을 차례대로 진행하는 알고리즘이다.
+
+// 사이클이 발생하는 경우 위상 정렬을 수행할 수 없다. (사이클이 뭐야 계속 돈다는건가)
+// DAG(Directed Acyclic Graph) : 사이클이 존재하지 않는 그래프
+// 시간 복잡도 : O(V + E) Vertex + Edge
+
+// 예시면... 모두의 마블 건물지을때..? 
+
+// 1. 진입 차수가 0인 정점을 Queue에 삽입한다.
+
+// 2. Queue에서 원소를 꺼내 연결된 모든 간선을 제거한다.
+
+// 3. 간선 제거 이후에 진입 차수가 0이 된 정점을 Queue에 삽입한다.
+
+// 4. Queue가 비어있을 때까지 2-3번 작업을 반복한다.
 
 class Graph
 {
 private:
-	//vector<pair<int, int>> adj;		// 이건 보류
+	queue<int> q;
 	vector<int> adj[SIZE];
-	bool visited[SIZE];					// 방문 여부 체크			방문 안했으면 0, 했으면 1
-	
+	//degree?
+	int degree[SIZE];	// ? 이게 아닌가 
+
+
+
 public:
-	// 초기화 어케함..?
-	Graph() 
+	Graph()
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
-			visited[i] = false;
+			degree[i] = 0;
 		}
 	}
 public:
-	void insert(int i, int j)
+	void insert(int vertex, int edge)
 	{
-		// ? ㅓ.....
-		// 방문했다는 증거가 필요한거같은데 이게 증거야? 
-		adj[i].push_back(j);
-		adj[j].push_back(i);
+		adj[vertex].push_back(edge);
+		degree[edge]++;
+		// q.front() 이걸 왜 지금 썻을까.. 다해놓고 이게 머고 하고잇네 
 	}
 
-	// 1 2 3 6 7 4 5 
-	void search(int start)		// 재귀로 한다고? 
+	void search(int vertex)		// 인자는 없나요.. insert에 다 만드는건가? 
 	{
-		visited[start] = true;		// 아마도 방문한 흔적
-		cout << start << " " << endl;
-		// 다시 재방문은 못하나? 그래서 표시하는건가
+		q.push(vertex);
 
-		// for? while? 둘다 아닌가 뭐지 
-		for (auto i : adj[i])
+		while (!q.empty())
 		{
-			if (visited[i] == false)
+			int temp = q.front();
+			q.pop();
+			cout << temp << " ";
+
+			for (int i = 0; i < adj[temp].size(); i++)
 			{
-				search(i);
+				int next = adj[temp][i];
+				if (degree[next] == 0)
+				{
+					degree[vertex]--;
+					q.push(next);
+
+				}
 			}
 		}
 
 	}
 };
+
 #pragma endregion
 
 int main()
 {
+	// 1 2 5 3 4 6 7
 	Graph graph;
 	graph.insert(1, 2);
-	graph.insert(1, 3);
+	graph.insert(1, 5);
 
 	graph.insert(2, 3);
-	graph.insert(2, 4);
-	graph.insert(2, 5);
+	graph.insert(3, 4);
 
-	graph.insert(3, 6);
-	graph.insert(3, 7);
+	graph.insert(4, 6);
+	graph.insert(5, 6);
 
-	graph.insert(4, 5);
 	graph.insert(6, 7);
 
-	graph.search(8);
+	graph.search(1);
 	return 0;
 }

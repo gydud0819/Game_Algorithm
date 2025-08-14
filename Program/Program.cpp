@@ -46,7 +46,14 @@ public:
 
 	void search(int vertex)		// 인자는 없나요.. insert에 다 만드는건가? 
 	{
-		q.push(vertex);
+		// 진입차수를 이렇게 설정해줘야 하는거구나 
+		for (int i = 1; i < SIZE; i++)
+		{
+			if (degree[i] == 0)
+			{
+				q.push(i);
+			}
+		}
 
 		while (!q.empty())
 		{
@@ -57,9 +64,9 @@ public:
 			for (int i = 0; i < adj[temp].size(); i++)
 			{
 				int next = adj[temp][i];
+				degree[next]--;
 				if (degree[next] == 0)
 				{
-					degree[vertex]--;
 					q.push(next);
 
 				}

@@ -78,6 +78,75 @@ public:
 
 #pragma endregion
 
+#pragma region Backtracking (퇴각검색)
+// 모든 가능한 경우의 수를 탐색해서 정답을 찾는 알고리즘이다.
+// 완전 탐색과 같이 모든 경우를 탐색하는 것과 비슷하지만
+// 답이 될 만한지 판단하고 그렇지 않으면 그 부분까지 탐색을 하지않고 가지치기를 한다.
+
+// 가지치기 : 해를 찾아가는 도중, 지금의 경로가 해가 될 것 같지 않으면 그 경로를 더이상 가지않고 되돌아가는 것. (불필요한 탐색을 막는다)
+
+// 재귀 형식으로 많이 작성한다. 
+
+// 체스 문제 : 백준 9663번 N-Queen 문제
+// 팁 : 퀸은 앞, 뒤, 대각선으로 움직일 수 있다. 
+class N_Queen
+{
+private:
+	int count;					// 퀸의 개수
+	int queen[SIZE];			// 퀸의 위치를 저장하는 배열
+
+public:
+	N_Queen() : count(0)
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			queen[i] = 0;
+		}
+	}
+public:
+	// 퀸을 놓을 수 있는지 확인하는 함수
+	bool QueenGo(int down, int up)
+	{
+		for (int i = 0; i < down; i++)
+		{
+			if (queen[i] == up || abs(queen[i] - up) == abs(i - down))
+			{
+				return false; // 퀸을 놓을 수 없다면 false 반환
+			}
+		}
+		return true; // 퀸을 놓을 수 있다면 true 반환
+
+	}
+
+	void NQueen(int down)
+	{
+		if (down == SIZE) // 모든 퀸을 놓았다면
+		{
+			count++; // 퀸의 개수 증가
+			return; // 종료
+		}
+
+		// DFS 기반
+		for (int i = 0; i < SIZE; i++)
+		{
+			if (QueenGo(down, i))
+			{
+				queen[down] = i; // 퀸을 놓는다
+				NQueen(down + 1); // 다음 퀸을 놓기 위해 재귀 호출
+			}
+		}
+	}
+
+	int GetCount() const
+	{
+		return count; // 퀸의 개수를 반환
+	}
+
+};
+
+#pragma endregion
+
+
 int main()
 {
 	// 1 2 5 3 4 6 7
@@ -94,5 +163,13 @@ int main()
 	graph.insert(6, 7);
 
 	graph.search(1);
+
+	cout << endl;
+
+	N_Queen nQueen;
+
+	nQueen.NQueen(0); // 0번째 퀸부터 시작
+	cout << nQueen.GetCount() << " " << endl; // 퀸의 개수를 출력
+
 	return 0;
 }

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#pragma region 이분? 이진? 탐색
+#pragma region 이분 탐색
 // 탐색 범위를 반으로 나누어 찾는 값을 포함하는 범위를 좁혀나가는 방식으로 동작하는 알고리즘 two pointer랑 다른건가 
 
 // for 써도 되고 재귀로 해도되고? 둘다 별론데

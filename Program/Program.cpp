@@ -175,79 +175,90 @@
 //}
 
 #include "Util.h"
-#define SIZE 4	// 4x4를 이따구로 표현한다고?
+#define SIZE 4	// 맵 크기
 class Maze
 {
 private:
-	// 맵을 만들어야한다고?
+
 	int wall;	// 벽 == 0
 	int road;	// 길 == 1
-	int maze[SIZE][SIZE];
-	bool visited[SIZE];		// 방문여부아님?
+	int maze[SIZE][SIZE] = {
+		{1,1,1,1,},
+		{0,0,0,1},
+		{1,1,1,1,},
+		{1,0,0,1}
+	};
+	bool visited[SIZE][SIZE];		// 방문여부
+
+	int dx[4] = { 1,-1,0,0 };
+	int dy[4] = { 0,0,1,-1 };
 public:
 
 	Maze() : wall(0), road(1)
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
-			visited[i] = false;
+			for (int j = 0; j < SIZE; j++)
+			{
+				visited[i][j] = false;
+
+			}
 		}
 	}
 
 public:
 
-	// 갈 수 있는지 없는지 확인하는거잖아 ..
+	// 갈 수 있는지 없는지 확인하기 위한 함수
 	bool CanGo(int x, int y)
 	{
-		for (int i = 0; i < x; i++)
+		if (x < 0 || x >= SIZE || y < 0 || y >= SIZE)
 		{
-			for (int j = 0; j < y; j++)
-			{
-				if (maze[i][y] == wall || maze[x][j] == wall)
-				{
-					return false;
-				}
-
-			}
-		}
-		return true;
-
-	}
-
-	int Mazes(int x, int y)
-	{
-		bool end = true;
-		for (int i = 0; i < SIZE; i++)
-		{
-			for (int j = 0; j < SIZE; j++)
-			{
-				if (x == road)
-					return Mazes(x + 1, y);
-				else if (x == wall)
-					return Mazes(x - 1, y);
-				else if (y == road)
-					return Mazes(x, y + 1);
-				else if (y == wall)
-					return Mazes(x, y - 1);
-
-			}
-		}
-
-		if (maze[x][y] == end)
-		{
-			cout << "Yes";
-			return true;
-		}
-		else
-		{
-			cout << "No";
 			return false;
 		}
+		
+		if (maze[x][y] == wall || visited[x][y])
+		{
+			return false;	// 벽이거나 이미 방문한 곳이면 갈 수 없다
+		}
+
+		return true;
+	}
+
+	bool SolveMaze(int x, int y)
+	{
+		if (x == SIZE - 1 && y == SIZE - 1) // 도착 지점
+		{
+			cout << "Yes" << endl;
+			return true;
+		}
+
+		visited[x][y] = true;
+
+		for (int i = 0; i < SIZE; i++)
+		{
+			int currentX = x + dx[i];
+			int currentY = y + dy[i];
+
+			if (CanGo(currentX, currentY))
+			{
+				if (SolveMaze(currentX, currentY)) // 재귀 호출
+				{
+					return true; // 도착 지점에 도달하면 true 반환
+				}
+			}
+		}
+
+		return false;
 	}
 };
+
 int main()
 {
 	Maze maze;
-	maze.Mazes(4, 4);
+	if (!maze.SolveMaze(0, 0))
+	{
+		cout << "No" << endl; // 도착 지점에 도달하지 못하면 No 출력
+	}
+
 	return 0;
 }

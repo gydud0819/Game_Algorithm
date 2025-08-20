@@ -34,20 +34,20 @@ private:
 
 		const bool& operator < (const Edge& edge)			// 이거부터 난관이네;;;   내 엣지랑 상대방 엣지?
 		{
-			/*if (this->weight < edge.weight)
-			{
-				return true;
-			}*/
-
 			return weight < edge.weight;
 		}
 	};
 
 	vector<Edge> nodelist;
+	int cost;		// 최소 비용 신장 트리 == edge 총 더한 값 (12 + 13 + 15 + 18 + 23 + 36)
 
 public:
-	Kruskal()
+	Kruskal() : cost(0)
 	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			parent[i] = i;
+		}
 		// 얜 초기화 어케함..?
 	}
 
@@ -72,19 +72,21 @@ public:
 		}
 
 		// 2. 포함시키기 전에 사이클이 형성되는지 확인하기
-		// if 쓰는거 아니야? for쓰는거야? 뭐야 대체 
 		for (Edge e : nodelist)
 		{
+			// 3. 사이클을 생성하는 경우 간선을 포함하지 않기
+
 			if (Find(e.X()) != Find(e.Y()))
 			{
-				//Union()
+				Union(e.X(), e.Y());
+				cost += e.WEIGHT();
+				
 			}
 		}
-
+		cout << "\n최소 비용: " << cost << endl;
 	}
 
-	int cost;		// 최소 비용 신장 트리 == edge 총 더한 값 (12 + 13 + 15 + 18 + 23 + 36)
-
+	
 	// 일단 갖고는 왔는데 어케 적용하지 ㅇㅅㅇ
 	int Find(int x)
 	{
@@ -113,21 +115,6 @@ public:
 		}
 	}
 
-	bool Same(int x, int y)
-	{
-		if (Find(x) == Find(y))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-
-
-	// 3. 사이클을 생성하는 경우 간선을 포함하지 않기
 };
 #pragma endregion
 

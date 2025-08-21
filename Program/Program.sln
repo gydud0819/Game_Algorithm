@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class17th Topology Sort (�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class18th Union FInd (서로소 집합)", "..\Class18th Union FInd (서로소 집합)\Class18th Union FInd (서로소 집합).vcxproj", "{63E52036-BD6A-45B6-B53B-A4BEFC1DE397}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class19th Kruskal (크루스칼)", "..\Class19th Kruskal (크루스칼)\Class19th Kruskal (크루스칼).vcxproj", "{E4098710-0913-4786-A0FD-616556143F32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -201,6 +203,14 @@ Global
 		{63E52036-BD6A-45B6-B53B-A4BEFC1DE397}.Release|x64.Build.0 = Release|x64
 		{63E52036-BD6A-45B6-B53B-A4BEFC1DE397}.Release|x86.ActiveCfg = Release|Win32
 		{63E52036-BD6A-45B6-B53B-A4BEFC1DE397}.Release|x86.Build.0 = Release|Win32
+		{E4098710-0913-4786-A0FD-616556143F32}.Debug|x64.ActiveCfg = Debug|x64
+		{E4098710-0913-4786-A0FD-616556143F32}.Debug|x64.Build.0 = Debug|x64
+		{E4098710-0913-4786-A0FD-616556143F32}.Debug|x86.ActiveCfg = Debug|Win32
+		{E4098710-0913-4786-A0FD-616556143F32}.Debug|x86.Build.0 = Debug|Win32
+		{E4098710-0913-4786-A0FD-616556143F32}.Release|x64.ActiveCfg = Release|x64
+		{E4098710-0913-4786-A0FD-616556143F32}.Release|x64.Build.0 = Release|x64
+		{E4098710-0913-4786-A0FD-616556143F32}.Release|x86.ActiveCfg = Release|Win32
+		{E4098710-0913-4786-A0FD-616556143F32}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

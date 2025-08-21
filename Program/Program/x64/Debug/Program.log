@@ -1,1 +1,7 @@
-﻿  Program.vcxproj -> C:\Users\DPC\Desktop\국비 유니티 프로젝트\Game_Algorithm\Program\x64\Debug\Program.exe
+﻿  Program.cpp
+C:\Users\Administrator\Desktop\Game_Algorithm\Program\Program.cpp(2,9): warning C4005: 'INFINITY': 매크로 재정의
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\corecrt_math.h(94,9):
+      'INFINITY'의 이전 정의를 참조하십시오.
+  
+C:\Users\Administrator\Desktop\Game_Algorithm\Program\Program.cpp(109,1): warning C4172: 지역 변수 또는 임시 : minIndex의 주소를 반환하는 중
+  Program.vcxproj -> C:\Users\Administrator\Desktop\Game_Algorithm\Program\x64\Debug\Program.exe

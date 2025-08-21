@@ -1,144 +1,120 @@
 ﻿#include "Util.h"
-#define SIZE 7
+#define INFINITY 10000000
+#define SIZE 6
 
-#pragma region 크루스칼
-// 그래프의 모든 정점을 포함하면서 사이클이 존재하지 않는 부분 그래프로,
-// 그래프의 모든 정점을 최소 비용으로 연결하는 트리이다.
+#pragma region 다익스트라 알고리즘
+// 그래프 알고리즘 기반
+// 시작점으로부터 모든 노드까지의 최소 거리를 구해주는 알고리즘이다.
 
-// 그래프의 정점의 개수가 n개 일 때, 간선의 수는 n-1개 이다.
+// 1. 거리 배열에서 weight[시작 노드]의 값들로 초기화 한다.
 
-// 요약 : 가장 적은 비용으로 모든 노드를 연결하기 위해 사용되는 알고리즘
+// 2. 시작점을 방문 처리한다.
 
-int parent[SIZE];
+// 3. 거리 배열에서 최소 비용 노드를 찾고 방문 처리한다. (단, 이미 방문한 노드는 제외한다.)
 
-class Kruskal
+// 4. 최소 비용 노드를 거쳐갈 지 고민해서 거리 배열을 갱신한다. 
+
+// 5. 모든 노드를 방문할 때 까지 3-4번을 반복한다.
+
+// 방문하지 않은 노드 중에서 가장 작은 거리를 가진 노드를 방문하고, 그 노드와 연결된 다른 노드까지의 거리를 계산한다.
+
+class Dijkstra
 {
 private:
-	class Edge
-	{
-	private:
-		int x;		//
-		int y;
-		int weight; // 가중치
+	// 이거뭐냐 미친듯
+	int graph[SIZE][SIZE] = {		// 6x6 행렬
 
-	public:
-		Edge(int _x, int _y, int _weight)
-		{
-			x = _x;
-			y = _y;
-			weight = _weight;
-		}
-		const int& X() { return x; }
-		const int& Y() { return y; }
-		const int& WEIGHT() { return weight; }
-
-		const bool& operator < (const Edge& edge)			// 이거부터 난관이네;;;   내 엣지랑 상대방 엣지?
-		{
-			return weight < edge.weight;
-		}
+		{0, 5, 2, 1, INFINITY,        INFINITY},
+		{2, 0, 3, 2, INFINITY,        INFINITY},
+		{5, 3, 0, 3, 1,	              5       },
+		{1, 2, 3, 0, 1,		          INFINITY},
+		{INFINITY, INFINITY,        1, 1, 0, 2},
+		{INFINITY, INFINITY,5, INFINITY , 2, 0},
 	};
-
-	vector<Edge> nodelist;
-	int cost;		// 최소 비용 신장 트리 == edge 총 더한 값 (12 + 13 + 15 + 18 + 23 + 36)
+	bool visited[SIZE];
+	int distance[SIZE];
 
 public:
-	Kruskal() : cost(0)
+	Dijkstra()
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
-			parent[i] = i;
-		}
-		// 얜 초기화 어케함..?
-	}
-
-public:
-	void insert(int vertexX, int vertexY, int weight)
-	{
-		nodelist.push_back(Edge(vertexX, vertexY, weight));
-
-	}
-
-	void calculate()
-	{
-		// 1. 정렬된 순서에 맞게 그래프에 포함시키기 (sort함수 써서 정렬하기)
-		sort(nodelist.begin(), nodelist.end());
-
-		for (int i = 0; i < nodelist.size(); i++)
-		{
-			cout << nodelist[i].X() << endl;
-			cout << nodelist[i].Y() << endl;
-			cout << nodelist[i].WEIGHT() << endl;
+			for (int j = 0; j < SIZE; j++)
+			{
+				cout << graph[i][j] << " ";
+			}
 			cout << endl;
 		}
 
-		// 2. 포함시키기 전에 사이클이 형성되는지 확인하기
-		for (Edge e : nodelist)
+		for (int i = 0; i < SIZE; i++)
 		{
-			// 3. 사이클을 생성하는 경우 간선을 포함하지 않기
+			visited[i] = false;
+			distance[i] = 0;
+		}
+	}
+public:
+	void Update(int start)
+	{
+		distance[start] = 0;
 
-			if (Find(e.X()) != Find(e.Y()))
+		for (int i = 0; i < SIZE; i++)
+		{
+			distance[i] = graph[start][i];
+		}
+
+		visited[start] = true;
+
+		for (int i = 0; i < SIZE - 1; i++)
+		{
+			int minNode = find();
+
+			visited[minNode] = true;
+
+			for (int j = 0; j < SIZE; j++)
 			{
-				Union(e.X(), e.Y());
-				cost += e.WEIGHT();
-				
+				if (!visited[j])
+				{
+					if (distance[minNode] + graph[minNode][j] < distance[j])
+					{
+						distance[j] = distance[minNode] + graph[minNode][j];
+					}
+				}
+			}
+
+		}
+
+		for (const auto& elem : distance)
+		{
+			cout << elem << " ";
+		}
+
+	}
+
+	// 최솟값 찾는 함수 int니까 return 해줘야할거같은데 
+	const int& find()
+	{
+		// 이러면 안됐나..
+		int min = INFINITY;		// 이게 최소비용노드(?)
+		// 변수 하나 더? 
+		int minIndex = 0;
+		for (int i = 0; i < SIZE; i++)
+		{
+			if (distance[i] < min && !visited[i])
+			{
+				// 제외?
+				min = distance[i];
+				minIndex = i;
 			}
 		}
-		cout << "\n최소 비용: " << cost << endl;
+		return minIndex;			// 뭘 반환해야할까 최솟값이겠지?
 	}
-
-	
-	// 일단 갖고는 왔는데 어케 적용하지 ㅇㅅㅇ
-	int Find(int x)
-	{
-		if (parent[x] != x)
-		{
-			parent[x] = Find(parent[x]);
-		}
-		return parent[x];
-
-	}
-
-	// 합치는 함수
-	void Union(int x, int y)
-	{
-		int parentX = Find(x);
-		int parentY = Find(y);
-
-		if (parentX < parentY)
-		{
-			parent[parentY] = parentX;
-		}
-
-		else if (parentX > parentY)
-		{
-			parent[parentX] = parentY;
-		}
-	}
-
 };
 #pragma endregion
 
 
 int main()
 {
-	Kruskal krus;
-	krus.insert(1, 7, 12);
-	krus.insert(4, 7, 13);
-
-	krus.insert(1, 4, 30);
-	krus.insert(2, 4, 23);
-
-	krus.insert(1, 2, 71);
-	krus.insert(1, 5, 15);
-
-
-
-	krus.calculate();
-
-
-
-
-
-
+	Dijkstra dij;
+	dij.Update(0);
 	return 0;
 }

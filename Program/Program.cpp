@@ -1,120 +1,84 @@
 ﻿#include "Util.h"
-#define INFINITY 10000000
-#define SIZE 6
+#define SIZE 4
+#define SIZE2 3
 
-#pragma region 다익스트라 알고리즘
-// 그래프 알고리즘 기반
-// 시작점으로부터 모든 노드까지의 최소 거리를 구해주는 알고리즘이다.
+#pragma region 시뮬레이션 알고리즘
+// 특정 알고리즘을 요구하기 보단 문제의 지시사항을 차례대로 따르고 그 결과를 정확하게 도출하는 알고리즘
 
-// 1. 거리 배열에서 weight[시작 노드]의 값들로 초기화 한다.
+// 명확한 규칙과 조건이 주어진다.
 
-// 2. 시작점을 방문 처리한다.
+// 문제 접근 방법
+// 1. 문제에서 요구하는 출력과 조건을 명확히 이해한다.
+// 2. 초기 변수 값이나 시작점, 방향 등을 명확하게 정의한다.
+// 3. 스켈레톤 코드 작성하기 (기본 뼈대 코드 설계하기)
+// 4. 규칙에 따라 단계별로 세부 구현 하기
 
-// 3. 거리 배열에서 최소 비용 노드를 찾고 방문 처리한다. (단, 이미 방문한 노드는 제외한다.)
+// ※ 주의 사항
+// 1) 범위를 명확하게 하기
+// 2) 예외 처리 신경 쓰기
+// 3) 효율성 고려하기
+// 4) 코너 케이스 테스트하기
 
-// 4. 최소 비용 노드를 거쳐갈 지 고민해서 거리 배열을 갱신한다. 
+/*
+* 백준 14503 로봇 청소기 
+* 
+* 로봇 청소기 동작법
+* 
+* 1. 현재 칸이 아직 청소되지 않은 경우, 현재 칸을 청소한다.
+* 
+* 2. 현재 칸의 주변 4칸 중 청소되지 않은 빈 칸이 없는 경우
+* 2-1. 바라보는 방향을 유지한 채로 한 칸 후진할 수 있다면 한 칸 후진하고 1번으로 돌아간다.
+* 2-2. 바라보는 방향의 뒤쪽 칸이 벽이라 후진할 수 없다면 작동을 멈춘다.
+* 
+* 3. 현재 칸의 주변 4칸 중 청소되지 않은 빈 칸이 있는 경우,
+* 3-1. 반시계 방향으로 90도 회전한다.
+* 3-2. 바라보는 방향을 기준으로 앞쪽 칸이 청소되지 않은 빈 칸인 경우 한 칸 전진한다.
+* 3-3. 1번으로 돌아간다.
+* 
+* 0 = 청소되지 않은 빈칸
+* 1 = 벽
+*/
 
-// 5. 모든 노드를 방문할 때 까지 3-4번을 반복한다.
-
-// 방문하지 않은 노드 중에서 가장 작은 거리를 가진 노드를 방문하고, 그 노드와 연결된 다른 노드까지의 거리를 계산한다.
-
-class Dijkstra
+class robotCleaner
 {
-private:
-	// 이거뭐냐 미친듯
-	int graph[SIZE][SIZE] = {		// 6x6 행렬
-
-		{0, 5, 2, 1, INFINITY,        INFINITY},
-		{2, 0, 3, 2, INFINITY,        INFINITY},
-		{5, 3, 0, 3, 1,	              5       },
-		{1, 2, 3, 0, 1,		          INFINITY},
-		{INFINITY, INFINITY,        1, 1, 0, 2},
-		{INFINITY, INFINITY,5, INFINITY , 2, 0},
+	int dir;
+	int room[SIZE][SIZE2] = {
+		{1,1,0},
+		{1,1,1},
+		{1,0,1},
+		{1,1,1}
 	};
-	bool visited[SIZE];
-	int distance[SIZE];
+	bool clear = false;
 
 public:
-	Dijkstra()
-	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			for (int j = 0; j < SIZE; j++)
-			{
-				cout << graph[i][j] << " ";
-			}
-			cout << endl;
-		}
+	robotCleaner() : dir(0) {}
+		
 
-		for (int i = 0; i < SIZE; i++)
-		{
-			visited[i] = false;
-			distance[i] = 0;
-		}
-	}
 public:
-	void Update(int start)
+	void Clean(int x, int y)
 	{
-		distance[start] = 0;
+		// 1.  현재 칸이 아직 청소되지 않은 경우 현재 칸 청소하기
+		if (x == clear && y == clear) return;
 
+		// 2. 현재 칸의 주변 4칸 중 청소되지 않은 빈 칸이 없는 경우 (if문 써야할듯)
 		for (int i = 0; i < SIZE; i++)
 		{
-			distance[i] = graph[start][i];
+			
 		}
+		// 2 - 1. 바라보는 방향을 유지한 채로 한 칸 후진할 수 있다면 한 칸 후진하고 1번으로 돌아간다.
+		// 2 - 2. 바라보는 방향의 뒤쪽 칸이 벽이라 후진할 수 없다면 작동을 멈춘다.
 
-		visited[start] = true;
-
-		for (int i = 0; i < SIZE - 1; i++)
-		{
-			int minNode = find();
-
-			visited[minNode] = true;
-
-			for (int j = 0; j < SIZE; j++)
-			{
-				if (!visited[j])
-				{
-					if (distance[minNode] + graph[minNode][j] < distance[j])
-					{
-						distance[j] = distance[minNode] + graph[minNode][j];
-					}
-				}
-			}
-
-		}
-
-		for (const auto& elem : distance)
-		{
-			cout << elem << " ";
-		}
-
-	}
-
-	// 최솟값 찾는 함수 int니까 return 해줘야할거같은데 
-	const int& find()
-	{
-		// 이러면 안됐나..
-		int min = INFINITY;		// 이게 최소비용노드(?)
-		// 변수 하나 더? 
-		int minIndex = 0;
-		for (int i = 0; i < SIZE; i++)
-		{
-			if (distance[i] < min && !visited[i])
-			{
-				// 제외?
-				min = distance[i];
-				minIndex = i;
-			}
-		}
-		return minIndex;			// 뭘 반환해야할까 최솟값이겠지?
+		// 3. 현재 칸의 주변 4칸 중 청소되지 않은 빈 칸이 있는 경우,
+		// 3 - 1. 반시계 방향으로 90도 회전한다.
+		// 3 - 2. 바라보는 방향을 기준으로 앞쪽 칸이 청소되지 않은 빈 칸인 경우 한 칸 전진한다.
+		// 3 - 3. 1번으로 돌아간다.
 	}
 };
+
 #pragma endregion
 
 
 int main()
 {
-	Dijkstra dij;
-	dij.Update(0);
 	return 0;
 }
